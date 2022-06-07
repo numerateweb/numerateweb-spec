@@ -10,7 +10,83 @@ The representation of mathematical formulas is based on https://openmath.org/om-
 
 POPCORN-LD is a compact textual notation for OpenMath objects that is aligned to the syntax used by SPARQL and Turtle for URI references.
 
+=== Predefined operators
+
+The POPCORN language provides common infix and other operators for
+the concise representation of mathematical expressions.
+
+[grid=none,cols="1,3,1"]
+|===
+|Operator	|	Corresponding Symbol	|	Arity
+|;	|	prog1:block	|	n
+|:=	|	prog1:assign	|	2
+|=\=>	|	logic1:implies	|	2
+|<\=>	|	logic1:equivalent	|	2
+|or	|	logic1:or	|	n
+|and	|	logic1:and	|	n
+|<	|	relation1:lt	|	2
+|\<=	|	relation1:leq	|	2
+|>	|	relation1:gt	|	2
+|=	|	relation1:eq	|	2
+|>=	|	relation1:geq	|	2
+|<>	|	relation1:neq	|	2
+|!=	|	relation1:neq	|	2
+|..	|	interval1:interval	|	n
+|+	|	arith1:plus	|	n
+|-	|	arith1:minus	|	2
+|*	|	arith1:times	|	n
+|/	|	arith1:divide	|	2
+|^	|	arith1:power	|	2
+|\|	|	complex1:complex_cartesian	|	2
+|//	|	nums1:rational	|	2
+|[...]	|	list1:list	|	n
+|{...}	|	set1:set	|	n
+|if...then...else...endif	|	prog1:if	|	n
+|while...do...endwhile	|	prog1:while	|	n
+|===
+
+=== Shortcut symbols
+
+The POPCORN language provides shorthand notations for common mathematical functors and constants.
+
+[grid=none,cols="1,2"]
+|===
+|abs	|	arith1:abs
+|binomial	|	combinat1:binomial
+|cos	|	transc1:cos
+|cosh	|	transc1:cosh
+|cot	|	transc1:cot
+|coth	|	transc1:coth
+|csc	|	transc1:csc
+|csch	|	transc1:csch
+|defint	|	calculus1:defint
+|diff	|	calculus1:diff
+|e	|	nums1:e
+|exp	|	transc1:exp
+|factorial	|	integer1:factorial
+|false	|	logic1:false
+|i	|	nums1:i
+|infinity	|	nums1:infinity
+|int	|	calculus1:int
+|lambda	|	fns1:lambda
+|max	|	minmax1:max
+|min	|	minmax1:min
+|pi	|	nums1:pi
+|product	|	arith1:product
+|root	|	arith1:root
+|sec	|	transc1:sec
+|sech	|	transc1:sech
+|sin	|	transc1:sin
+|sinh	|	transc1:sinh
+|sum	|	arith1:sum
+|tan	|	transc1:tan
+|tanh	|	transc1:tanh
+|true	|	logic1:true
+|===
+
 === POPCORN-LD: Grammar
+
+==== Rules
 
 [grid=none,cols="2,1,6",separator="&"]
 |===
@@ -78,6 +154,8 @@ POPCORN-LD is a compact textual notation for OpenMath objects that is aligned to
 &<RdfValueSet> & => & <iri> ( '(' <expr> ')' )? ( '[' <ManchesterDescription> ']' )?
 |===
 
+==== Terminals
+
 [grid=none,cols="2,1,6",separator="&"]
 |===
 &<ID> & => & <PN_CHARS_U> ( [0-9] | <PN_CHARS_U> )*
@@ -109,3 +187,4 @@ POPCORN-LD is a compact textual notation for OpenMath objects that is aligned to
 &<HEX> & => & [0-9] | [A-F] | [a-f]
 &<PN_LOCAL_ESC> & => & '\' ( '_' | '~' | '.' | '-' | '!' | '$' | '\&' | "'" | '(' | ')' | '*' | '+' | ',' | ';' | '=' | '/' | '?' | '#' | '@' | '\%' )
 |===
+
