@@ -12,7 +12,7 @@ POPCORN-LD is a compact textual notation for OpenMath objects that is aligned to
 
 === POPCORN-LD: Grammar
 
-[frame=ends,cols="2,1,6",separator="&"]
+[grid=none,cols="2,1,6",separator="&"]
 |===
 &<expr> & => & <blockExpr>
 &<blockExpr> & => & <assignExpr> (';' <assignExpr>)*
@@ -78,7 +78,7 @@ POPCORN-LD is a compact textual notation for OpenMath objects that is aligned to
 &<RdfValueSet> & => & <iri> ( '(' <expr> ')' )? ( '[' <ManchesterDescription> ']' )?
 |===
 
-[frame=ends,cols="2,1,6",separator="&"]
+[grid=none,cols="2,1,6",separator="&"]
 |===
 &<ID> & => & <PN_CHARS_U> ( [0-9] | <PN_CHARS_U> )*
 &<OMB> & => & '\%' ([a-z] | [A-Z] | [0-9] | '=')+ '\%'
