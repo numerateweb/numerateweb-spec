@@ -446,6 +446,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#representation-of-mathematical-formulas">Representation of mathematical formulas</a></li>
 <li><a href="#popcorn-ld-a-textual-syntax">POPCORN-LD: A textual syntax</a>
 <ul class="sectlevel2">
+<li><a href="#predefined-operators">Predefined operators</a></li>
+<li><a href="#shortcut-symbols">Shortcut symbols</a></li>
 <li><a href="#popcorn-ld-grammar">POPCORN-LD: Grammar</a></li>
 </ul>
 </li>
@@ -468,7 +470,293 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>POPCORN-LD is a compact textual notation for OpenMath objects that is aligned to the syntax used by SPARQL and Turtle for URI references.</p>
 </div>
 <div class="sect2">
+<h3 id="predefined-operators"><a class="anchor" href="#predefined-operators"></a>Predefined operators</h3>
+<div class="paragraph">
+<p>The POPCORN language provides common infix and other operators for
+the concise representation of mathematical expressions.</p>
+</div>
+<table class="tableblock frame-all grid-none stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponding Symbol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prog1:block</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prog1:assign</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">==&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logic1:implies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8656;&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logic1:equivalent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">or</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logic1:or</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">and</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logic1:and</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relation1:lt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relation1:leq</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relation1:gt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relation1:eq</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relation1:geq</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relation1:neq</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">!=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relation1:neq</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interval1:interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arith1:plus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arith1:minus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arith1:times</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arith1:divide</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">^</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arith1:power</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">|</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">complex1:complex_cartesian</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">//</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nums1:rational</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[&#8230;&#8203;]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list1:list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{&#8230;&#8203;}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set1:set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if&#8230;&#8203;then&#8230;&#8203;else&#8230;&#8203;endif</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prog1:if</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">while&#8230;&#8203;do&#8230;&#8203;endwhile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prog1:while</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="shortcut-symbols"><a class="anchor" href="#shortcut-symbols"></a>Shortcut symbols</h3>
+<div class="paragraph">
+<p>The POPCORN language provides shorthand notations for common mathematical functors and constants.</p>
+</div>
+<table class="tableblock frame-all grid-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">abs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arith1:abs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">binomial</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">combinat1:binomial</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:cos</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cosh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:cosh</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:cot</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">coth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:coth</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">csc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:csc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">csch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:csch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">calculus1:defint</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diff</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">calculus1:diff</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nums1:e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:exp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">factorial</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer1:factorial</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logic1:false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nums1:i</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">infinity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nums1:infinity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">calculus1:int</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lambda</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fns1:lambda</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">max</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minmax1:max</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">min</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minmax1:min</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nums1:pi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arith1:product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">root</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arith1:root</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sec</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:sec</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sech</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:sech</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:sin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sinh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:sinh</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arith1:sum</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:tan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tanh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transc1:tanh</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logic1:true</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
 <h3 id="popcorn-ld-grammar"><a class="anchor" href="#popcorn-ld-grammar"></a>POPCORN-LD: Grammar</h3>
+<div class="sect3">
+<h4 id="rules"><a class="anchor" href="#rules"></a>Rules</h4>
 <table class="tableblock frame-all grid-none stretch">
 <colgroup>
 <col style="width: 22.2222%;">
@@ -716,6 +1004,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="terminals"><a class="anchor" href="#terminals"></a>Terminals</h4>
 <table class="tableblock frame-all grid-none stretch">
 <colgroup>
 <col style="width: 22.2222%;">
@@ -857,9 +1148,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-07 12:26:20 UTC
+Last updated 2022-06-07 13:30:35 UTC
 </div>
 </div>
 </body>
