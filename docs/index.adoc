@@ -84,9 +84,9 @@ The POPCORN language provides shorthand notations for common mathematical functo
 |true	|	logic1:true
 |===
 
-=== POPCORN-LD: Grammar
+=== Grammar
 
-==== Rules
+==== Non-terminal symbols
 
 [grid=none,cols="2,1,6",separator="&"]
 |===
@@ -154,7 +154,7 @@ The POPCORN language provides shorthand notations for common mathematical functo
 &<RdfValueSet> & => & <iri> ( '(' <expr> ')' )? ( '[' <ManchesterDescription> ']' )?
 |===
 
-==== Terminals
+==== Terminal symbols
 
 [grid=none,cols="2,1,6",separator="&"]
 |===
@@ -164,7 +164,7 @@ The POPCORN language provides shorthand notations for common mathematical functo
 &<DECIMAL> & => & [+-]? [0-9]* '.' [0-9]+
 &<DOUBLE> & => & [+-]? ([0-9]+ '.' [0-9]* <EXPONENT> | '.' [0-9]+ <EXPONENT> | \\ [0-9]+ <EXPONENT>)
 &<EXPONENT> & => & [eE] [+-]? [0-9]+
-&<FOREIGN> & => & \lit{'} .* '<' .+ \lit{>'}
+&<FOREIGN> & => & "'" .* '<' .+ '>'
 &<WS> & => & (' ' | '\\t' | '\\n' | '\\r')+
 &<COMMENT> & => & '/\*' .* '*/'
 &<IRIREF> & => & '<' ([\^<>''|^'\]-[#x00-#x20])* '>'
@@ -188,3 +188,55 @@ The POPCORN language provides shorthand notations for common mathematical functo
 &<PN_LOCAL_ESC> & => & '\' ( '_' | '~' | '.' | '-' | '!' | '$' | '\&' | "'" | '(' | ')' | '*' | '+' | ',' | ';' | '=' | '/' | '?' | '#' | '@' | '\%' )
 |===
 
+== Computation rules
+
+=== RDF syntax
+
+TBD
+
+=== Textual syntax
+
+Mathematical rules can be expressed using an extended https://www.w3.org/TR/owl2-manchester-syntax/[Manchester OWL Syntax].
+
+.Example rule file for process planning
+[source]
+----
+Prefix: : <http://example.org/model#>
+
+Ontology: <http://example.org/model>
+  Import: <http://numerateweb.org/vocab/math/rules>
+
+Class: Plan
+  Constraint: 
+    partsPerHour = @partsPerYear / @workHoursPerYear(@masterData),
+    taktTime = 3600 / @partsPerHour
+
+Class: Process
+  Constraint: 
+    costsPerPart = @machineHourRate / 3600 * @processTime / @partsPerCycle,
+    costsPerYear = @resourceCount * @depreciation(@resource) + @imputedInterest + @occupancyCosts + @maintenanceCosts + @energyCosts,
+    energyCosts = @energyCostsElectrical,
+    energyCostsElectrical = @resourceCount * @energyElectrical * @energyPriceElectrical(@masterData(@plan)),
+    energyElectrical = @inputPowerElectrical(@resource) * @fullLoadHours,
+    fullLoadHours = @utilization * @workHoursPerYear(@masterData(@plan)),
+    imputedInterest = @resourceCount * @investmentCosts(@resource) / 2 * @interestRate(@masterData(@plan)),
+    machineHourRate = @costsPerYear / @fullLoadHours,
+    maintenanceCosts = @resourceCount * (@maintenanceCosts(@resource) + sum(@@uses(@resource), $w -> @maintenanceCosts($w))),
+    maxPartsPerHour = 3600 / @processTime * @capacity(@resource),
+    occupancyCosts = @resourceCount * @requiredSpace(@resource) * @occupanyCostRate(@masterData(@plan)),
+    partsPerCycle = @resourceCount * @capacity(@resource),
+    processTime = @processTime(@resource),
+    resourceCount = ceiling((@processTime / @capacity(@resource)) / @taktTime(@plan)),
+    utilization = (@partsPerHour(@plan) / @maxPartsPerHour) / @resourceCount
+
+Class: ProcessWithGas
+  Constraint: 
+    energyCosts = @energyCostsElectrical + @energyCostsGas
+    energyCostsGas = @resourceCount * @energyGas * @energyPriceGas(@masterData(@plan)),
+    energyGas = @inputPowerGas(@resource) * @fullLoadHours
+
+Class: Resource
+  Constraint: 
+    depreciation = @price / @economicLife + sum(@@uses, $w -> @depreciation($w)),
+    investmentCosts = @price + sum(@@uses, $w -> @investmentCosts($w))
+----
