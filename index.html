@@ -469,94 +469,155 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="popcorn-ld-grammar"><a class="anchor" href="#popcorn-ld-grammar"></a>POPCORN-LD: Grammar</h3>
-<div class="paragraph">
-<p>&lt;expr&gt; &#8658; &lt;blockExpr&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;blockExpr&gt; &#8658; &lt;assignExpr&gt; (';' &lt;assignExpr&gt;)*</p>
-</div>
-<div class="paragraph">
-<p>&lt;assignExpr&gt; &#8658; &lt;implExpr&gt; (':=' &lt;implExpr&gt;)?</p>
-</div>
-<div class="paragraph">
-<p>&lt;implExpr&gt; &#8658; &lt;orExpr&gt; (('=&#8658;' | '&lt;&#8658;') &lt;orExpr&gt;)?</p>
-</div>
-<div class="paragraph">
-<p>&lt;orExpr&gt; &#8658; &lt;andExpr&gt; ('or' &lt;andExpr&gt;)*</p>
-</div>
-<div class="paragraph">
-<p>&lt;andExpr&gt; &#8658; &lt;relExpr&gt; ('and' &lt;relExpr&gt;)*</p>
-</div>
-<div class="paragraph">
-<p>&lt;relExpr&gt; &#8658; &lt;intervalExpr&gt; (('=' | '&lt;' | '&#8656;' | '&gt;' | '&gt;=' | '!=' | '&lt;&gt;') &lt;intervalExpr&gt;)?</p>
-</div>
-<div class="paragraph">
-<p>&lt;intervalExpr&gt; &#8658; &lt;addExpr&gt; ('..' &lt;addExpr&gt;)?</p>
-</div>
-<div class="paragraph">
-<p>&lt;addExpr&gt; &#8658; &lt;multExpr&gt; (('-' | '+') &lt;multExpr&gt;)*</p>
-</div>
-<div class="paragraph">
-<p>&lt;multExpr&gt; &#8658; &lt;powerExpr&gt; (('/' | '*') &lt;powerExpr&gt;)*</p>
-</div>
-<div class="paragraph">
-<p>&lt;powerExpr&gt; &#8658; &lt;complexExpr&gt; ('^' &lt;complexExpr&gt;)?</p>
-</div>
-<div class="paragraph">
-<p>&lt;complexExpr&gt; &#8658; &lt;rationalExpr&gt; ('|' &lt;rationalExpr&gt;)?</p>
-</div>
-<div class="paragraph">
-<p>&lt;rationalExpr&gt; &#8658; &lt;negExpr&gt; ('//' &lt;negExpr&gt;)?</p>
-</div>
-<div class="paragraph">
-<p>&lt;negExpr&gt; &#8658; ('-' | 'not') &lt;compExpr&gt;
-	 |	&lt;compExpr&gt;;</p>
-</div>
-<div class="paragraph">
-<p>&lt;compExpr&gt; &#8658; &lt;paraExpr&gt;
+<table class="tableblock frame-ends grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 11.1111%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;expr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;blockExpr&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;blockExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;assignExpr&gt; (';' &lt;assignExpr&gt;)*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;assignExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;implExpr&gt; (':=' &lt;implExpr&gt;)?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;implExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;orExpr&gt; (('=&#8658;' | '&lt;&#8658;') &lt;orExpr&gt;)?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;orExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;andExpr&gt; ('or' &lt;andExpr&gt;)*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;andExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;relExpr&gt; ('and' &lt;relExpr&gt;)*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;relExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;intervalExpr&gt; (('=' | '&lt;' | '&#8656;' | '&gt;' | '&gt;=' | '!=' | '&lt;&gt;') &lt;intervalExpr&gt;)?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;intervalExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;addExpr&gt; ('..' &lt;addExpr&gt;)?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;addExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;multExpr&gt; (('-' | '+') &lt;multExpr&gt;)*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;multExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;powerExpr&gt; (('/' | '*') &lt;powerExpr&gt;)*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;powerExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;complexExpr&gt; ('^' &lt;complexExpr&gt;)?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;complexExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;rationalExpr&gt; ('|' &lt;rationalExpr&gt;)?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;rationalExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;negExpr&gt; ('//' &lt;negExpr&gt;)?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;negExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">('-' | 'not') &lt;compExpr&gt;
+	 |	&lt;compExpr&gt;;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;compExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;paraExpr&gt;
 	 |	&lt;ecall&gt;
 	 |	&lt;attribution&gt;
 	 |	&lt;binding&gt;
 	 |	&lt;listExpr&gt;
 	 |	&lt;setExpr&gt;
 	 |  &lt;lambdaExpr&gt;
-	 |	&lt;anchor&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;arguments&gt; &#8658; |	&lt;expr&gt; (',' &lt;expr&gt;)*</p>
-</div>
-<div class="paragraph">
-<p>&lt;call&gt; &#8658; &lt;anchor&gt; '(' &lt;arguments&gt; ')'</p>
-</div>
-<div class="paragraph">
-<p>&lt;ecall&gt; &#8658; &lt;anchor&gt; '!' '(' &lt;arguments&gt; ')'</p>
-</div>
-<div class="paragraph">
-<p>&lt;listExpr&gt; &#8658; '[' &lt;arguments&gt; ']'</p>
-</div>
-<div class="paragraph">
-<p>&lt;setExpr&gt; &#8658; '{' &lt;arguments&gt; '}'</p>
-</div>
-<div class="paragraph">
-<p>&lt;lambdaExpr&gt; &#8658; &lt;varList&gt; '&#8594;' &lt;assignExpr&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;attribution&gt; &#8658; &lt;anchor&gt; '{' &lt;attributionList&gt; '}'</p>
-</div>
-<div class="paragraph">
-<p>&lt;attributionList&gt; &#8658; &lt;attributionPair&gt; (',' &lt;attributionPair&gt;)*</p>
-</div>
-<div class="paragraph">
-<p>&lt;attributionPair&gt; &#8658; &lt;expr&gt; '&#8594;' &lt;expr&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;binding&gt; &#8658; &lt;anchor&gt; '[' &lt;varList&gt; '&#8594;' &lt;expr&gt; ']'</p>
-</div>
-<div class="paragraph">
-<p>&lt;anchor&gt; &#8658; &lt;atom&gt; (':' &lt;ID&gt;)</p>
-</div>
-<div class="paragraph">
-<p>&lt;atom&gt; &#8658; &lt;paraExpr&gt;
+	 |	&lt;anchor&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;arguments&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">| &lt;expr&gt; (',' &lt;expr&gt;)*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;call&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;anchor&gt; '(' &lt;arguments&gt; ')'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;ecall&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;anchor&gt; '!' '(' &lt;arguments&gt; ')'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;listExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'[' &lt;arguments&gt; ']'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;setExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'{' &lt;arguments&gt; '}'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;lambdaExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;varList&gt; '&#8594;' &lt;assignExpr&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;attribution&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;anchor&gt; '{' &lt;attributionList&gt; '}'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;attributionList&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;attributionPair&gt; (',' &lt;attributionPair&gt;)*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;attributionPair&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;expr&gt; '&#8594;' &lt;expr&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;binding&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;anchor&gt; '[' &lt;varList&gt; '&#8594;' &lt;expr&gt; ']'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;anchor&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;atom&gt; (':' &lt;ID&gt;)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;atom&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;paraExpr&gt;
 	 |	&lt;var&gt;
 	 |  &lt;Rdf&gt;
 	 |	&lt;ifExpr&gt;
@@ -566,145 +627,239 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 	 |	&lt;number&gt;
 	 |	&lt;OMB&gt;
 	 |	&lt;FOREIGN&gt;
-	 |	&lt;string&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;paraExpr&gt; &#8658; '(' &lt;expr&gt; ')'</p>
-</div>
-<div class="paragraph">
-<p>&lt;ifExpr&gt; &#8658; 'if' &lt;expr&gt; 'then' &lt;expr&gt; 'else' &lt;expr&gt; 'endif'</p>
-</div>
-<div class="paragraph">
-<p>&lt;whileExpr&gt; &#8658; 'while' &lt;expr&gt; 'do' &lt;expr&gt; 'endwhile'</p>
-</div>
-<div class="paragraph">
-<p>&lt;unaryOp&gt; &#8658; '-' | 'not'</p>
-</div>
-<div class="paragraph">
-<p>&lt;ref&gt; &#8658; '#' &lt;iri&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;symbol&gt; &#8658; &lt;iri&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;iri&gt; &#8658; &lt;IRIREF&gt; | &lt;prefixedName&gt; | [0-9]* &lt;PN_CHARS_U&gt; &lt;PN_LOCAL&gt;?</p>
-</div>
-<div class="paragraph">
-<p>&lt;prefixedName&gt; &#8658; &lt;PNAME_LN&gt; | &lt;PNAME_NS&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;var&gt; &#8658; '\$' &lt;ID&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;varList&gt; &#8658; |	&lt;var&gt; (',' &lt;var&gt;)*</p>
-</div>
-<div class="paragraph">
-<p>&lt;number&gt; &#8658; &lt;INTEGER&gt; | &lt;DECIMAL&gt; | &lt;DOUBLE&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;string&gt; &#8658; &lt;STRING_LITERAL1&gt; | &lt;STRING_LITERAL2&gt; | &lt;STRING_LITERAL_LONG1&gt; | \\
-				&lt;STRING_LITERAL_LONG2&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;Rdf&gt; &#8658; '@@' &lt;RdfResourceSet&gt; | '@' &lt;RdfResource&gt; | '@@' &lt;RdfValueSet&gt; | '@' &lt;RdfValue&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;RdfResourceSet&gt; &#8658; '[' &lt;ManchesterDescription&gt; ']'</p>
-</div>
-<div class="paragraph">
-<p>&lt;RdfResource&gt; &#8658; '(' &lt;iri&gt; ')'</p>
-</div>
-<div class="paragraph">
-<p>&lt;RdfValue&gt; &#8658; &lt;iri&gt; ( '(' &lt;expr&gt; ')' )?</p>
-</div>
-<div class="paragraph">
-<p>&lt;RdfValueSet&gt; &#8658; &lt;iri&gt; ( '(' &lt;expr&gt; ')' )? ( '[' &lt;ManchesterDescription&gt; ']' )?</p>
-</div>
-<div class="paragraph">
-<p>&lt;ID&gt; &#8658; &lt;PN_CHARS_U&gt; ( [0-9] | &lt;PN_CHARS_U&gt; )*</p>
-</div>
-<div class="paragraph">
-<p>&lt;OMB&gt; &#8658; '\%' ([a-z] | [A-Z] | [0-9] | '=')+ '\%'</p>
-</div>
-<div class="paragraph">
-<p>&lt;INTEGER&gt; &#8658; [-]? [0-9]</p>
-</div>
-<div class="paragraph">
-<p>&lt;DECIMAL&gt; &#8658; [-]? [0-9]* '.' [0-9]</p>
-</div>
-<div class="paragraph">
-<p>&lt;DOUBLE&gt; &#8658; [-]? ([0-9] '.' [0-9]* &lt;EXPONENT&gt; | '.' [0-9]+ &lt;EXPONENT&gt; | \\ [0-9]+ &lt;EXPONENT&gt;)</p>
-</div>
-<div class="paragraph">
-<p>&lt;EXPONENT&gt; &#8658; [eE] [-]? [0-9]</p>
-</div>
-<div class="paragraph">
-<p>&lt;FOREIGN&gt; &#8658; \lit{'} .* '&lt;' .+ \lit{&gt;'}</p>
-</div>
-<div class="paragraph">
-<p>&lt;WS&gt; &#8658; (' ' | '\\t' | '\\n' | '\\r')+</p>
-</div>
-<div class="paragraph">
-<p>&lt;COMMENT&gt; &#8658; '/*' .* '*/'</p>
-</div>
-<div class="paragraph">
-<p>&lt;IRIREF&gt; &#8658; '&lt;' ([^&lt;&gt;''|^'\]-[#x00-#x20])* '&gt;'</p>
-</div>
-<div class="paragraph">
-<p>&lt;PNAME_NS&gt; &#8658; &lt;PN_PREFIX&gt;? ':'</p>
-</div>
-<div class="paragraph">
-<p>&lt;PNAME_LN&gt; &#8658; &lt;PNAME_NS&gt; &lt;PN_LOCAL&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;STRING_LITERAL1&gt; &#8658; "'" ( ([^#x27#x5C#xA#xD]) | &lt;ECHAR&gt; )* "'"</p>
-</div>
-<div class="paragraph">
-<p>&lt;STRING_LITERAL2&gt; &#8658; '"' ( ([^#x27#x5C#xA#xD]) | &lt;ECHAR&gt; )* '"'</p>
-</div>
-<div class="paragraph">
-<p>&lt;STRING_LITERAL_LONG1&gt; &#8658; "'''" ( ( "'" | "''" )? ( [^'\] | &lt;ECHAR&gt; ) )* "'''"</p>
-</div>
-<div class="paragraph">
-<p>&lt;STRING_LITERAL_LONG2&gt; &#8658; '"""' ( ( '"' | '""' )? ( [^''\\] | &lt;ECHAR&gt; ) )* '"""'</p>
-</div>
-<div class="paragraph">
-<p>&lt;PN_CHARS_BASE&gt; &#8658; [A-Z] | [a-z] | [#x00C0-#x00D6] | [#x00D8-#x00F6] | \\
+	 |	&lt;string&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;paraExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'(' &lt;expr&gt; ')'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;ifExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'if' &lt;expr&gt; 'then' &lt;expr&gt; 'else' &lt;expr&gt; 'endif'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;whileExpr&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'while' &lt;expr&gt; 'do' &lt;expr&gt; 'endwhile'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;unaryOp&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'-' | 'not'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;ref&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'#' &lt;iri&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;symbol&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;iri&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;iri&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;IRIREF&gt; | &lt;prefixedName&gt; | [0-9]* &lt;PN_CHARS_U&gt; &lt;PN_LOCAL&gt;?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;prefixedName&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PNAME_LN&gt; | &lt;PNAME_NS&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;var&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'\$' &lt;ID&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;varList&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">|	&lt;var&gt; (',' &lt;var&gt;)*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;number&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;INTEGER&gt; | &lt;DECIMAL&gt; | &lt;DOUBLE&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;string&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;STRING_LITERAL1&gt; | &lt;STRING_LITERAL2&gt; | &lt;STRING_LITERAL_LONG1&gt; | &lt;STRING_LITERAL_LONG2&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;Rdf&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'@@' &lt;RdfResourceSet&gt; | '@' &lt;RdfResource&gt; | '@@' &lt;RdfValueSet&gt; | '@' &lt;RdfValue&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;RdfResourceSet&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'[' &lt;ManchesterDescription&gt; ']'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;RdfResource&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'(' &lt;iri&gt; ')'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;RdfValue&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;iri&gt; ( '(' &lt;expr&gt; ')' )?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;RdfValueSet&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;iri&gt; ( '(' &lt;expr&gt; ')' )? ( '[' &lt;ManchesterDescription&gt; ']' )?</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-ends grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 11.1111%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;ID&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PN_CHARS_U&gt; ( [0-9] | &lt;PN_CHARS_U&gt; )*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;OMB&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'\%' ([a-z] | [A-Z] | [0-9] | '=')+ '\%'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;INTEGER&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[-]? [0-9]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;DECIMAL&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[-]? [0-9]* '.' [0-9]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;DOUBLE&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[-]? ([0-9] '.' [0-9]* &lt;EXPONENT&gt; | '.' [0-9]+ &lt;EXPONENT&gt; | \\ [0-9]+ &lt;EXPONENT&gt;)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;EXPONENT&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[eE] [-]? [0-9]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;FOREIGN&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\lit{'} .* '&lt;' .+ \lit{&gt;'}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;WS&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(' ' | '\\t' | '\\n' | '\\r')+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;COMMENT&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'/*' .* '*/'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;IRIREF&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'&lt;' ([^&lt;&gt;''|^'\]-[#x00-#x20])* '&gt;'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PNAME_NS&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PN_PREFIX&gt;? ':'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PNAME_LN&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PNAME_NS&gt; &lt;PN_LOCAL&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;STRING_LITERAL1&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"'" ( ([^#x27#x5C#xA#xD]) | &lt;ECHAR&gt; )* "'"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;STRING_LITERAL2&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'"' ( ([^#x27#x5C#xA#xD]) | &lt;ECHAR&gt; )* '"'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;STRING_LITERAL_LONG1&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"'''" ( ( "'" | "''" )? ( [^'\] | &lt;ECHAR&gt; ) )* "'''"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;STRING_LITERAL_LONG2&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'"""' ( ( '"' | '""' )? ( [^''\\] | &lt;ECHAR&gt; ) )* '"""'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PN_CHARS_BASE&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[A-Z] | [a-z] | [#x00C0-#x00D6] | [#x00D8-#x00F6] | \\
 					[#x00F8-#x02FF] | [#x0370-#x037D] | [#x037F-#x1FFF] | \\
 					[#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | \\
-					[#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]</p>
-</div>
-<div class="paragraph">
-<p>&lt;PN_CHARS_U&gt; &#8658; &lt;PN_CHARS_BASE&gt; | '_'</p>
-</div>
-<div class="paragraph">
-<p>&lt;PN_CHARS&gt; &#8658; &lt;PN_CHARS_U&gt; | '-' | [0-9] | #x00B7 | [#x0300-#x036F] | \\ [#x203F-#x2040]</p>
-</div>
-<div class="paragraph">
-<p>&lt;PN_PREFIX&gt; &#8658; [0-9]* &lt;PN_CHARS_BASE&gt; ((&lt;PN_CHARS&gt; | '.')* &lt;PN_CHARS&gt;)?</p>
-</div>
-<div class="paragraph">
-<p>&lt;PN_LOCAL&gt; &#8658; (&lt;PN_CHARS_U&gt; | ':' | [0-9] | &lt;PLX&gt; ) &lt;PN_CHARS&gt; | '.' | ':' | &lt;PLX&gt;)* (&lt;PN_CHARS&gt; | ':' | &lt;PLX&gt;?</p>
-</div>
-<div class="paragraph">
-<p>&lt;PLX&gt; &#8658; &lt;PERCENT&gt; | &lt;PN_LOCAL_ESC&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;PERCENT&gt; &#8658; '\%' &lt;HEX&gt; &lt;HEX&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;HEX&gt; &#8658; [0-9] | [A-F] | [a-f]</p>
-</div>
-<div class="paragraph">
-<p>&lt;PN_LOCAL_ESC&gt; &#8658; '\' ( '_' | '~' | '.' | '-' | '!' | '$' | '&amp;' | "'" | '(' | ')' | '*' | '+' | ',' | ';' | '=' | '/' | '?' | '#' | '@' | '\%' )</p>
-</div>
+					[#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PN_CHARS_U&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PN_CHARS_BASE&gt; | '_'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PN_CHARS&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PN_CHARS_U&gt; | '-' | [0-9] | #x00B7 | [#x0300-#x036F] | \\ [#x203F-#x2040]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PN_PREFIX&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0-9]* &lt;PN_CHARS_BASE&gt; ((&lt;PN_CHARS&gt; | '.')* &lt;PN_CHARS&gt;)?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PN_LOCAL&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(&lt;PN_CHARS_U&gt; | ':' | [0-9] | &lt;PLX&gt; ) &lt;PN_CHARS&gt; | '.' | ':' | &lt;PLX&gt;)* (&lt;PN_CHARS&gt; | ':' | &lt;PLX&gt;?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PLX&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PERCENT&gt; | &lt;PN_LOCAL_ESC&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PERCENT&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'\%' &lt;HEX&gt; &lt;HEX&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;HEX&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0-9] | [A-F] | [a-f]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;PN_LOCAL_ESC&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'\' ( '_' | '~' | '.' | '-' | '!' | '$' | '&amp;' | "'" | '(' | ')' | '*' | '+' | ',' | ';' | '=' | '/' | '?' | '#' | '@' | '\%' )</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-07 07:56:47 UTC
+Last updated 2022-06-07 12:23:04 UTC
 </div>
 </div>
 </body>
